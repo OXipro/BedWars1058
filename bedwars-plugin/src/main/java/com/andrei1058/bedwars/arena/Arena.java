@@ -944,12 +944,12 @@ public class Arena implements IArena {
         if (getParty().hasParty(p)) {
             if (getParty().isOwner(p)) {
                 if (status != GameState.restarting) {
-                    if (getParty().isInternal()) {
-                        for (Player mem : new ArrayList<>(getParty().getMembers(p))) {
-                            mem.sendMessage(getMsg(mem, Messages.ARENA_LEAVE_PARTY_DISBANDED));
-                        }
-                    }
-                    getParty().disband(p);
+//                    if (getParty().isInternal()) {
+//                        for (Player mem : new ArrayList<>(getParty().getMembers(p))) {
+//                            mem.sendMessage(getMsg(mem, Messages.ARENA_LEAVE_PARTY_DISBANDED));
+//                        }
+//                    }
+//                    getParty().disband(p);
 
                     // prevent arena from staring with a single player
                     teamuri = false;
@@ -1081,19 +1081,19 @@ public class Arena implements IArena {
             });
         }
 
-        /* Remove also the party */
-        if (getParty().hasParty(p)) {
-            if (getParty().isOwner(p)) {
-                if (status != GameState.restarting) {
-                    if (getParty().isInternal()) {
-                        for (Player mem : new ArrayList<>(getParty().getMembers(p))) {
-                            mem.sendMessage(getMsg(mem, Messages.ARENA_LEAVE_PARTY_DISBANDED));
-                        }
-                    }
-                    getParty().disband(p);
-                }
-            }
-        }
+//        /* Remove also the party */
+//        if (getParty().hasParty(p)) {
+//            if (getParty().isOwner(p)) {
+//                if (status != GameState.restarting) {
+//                    if (getParty().isInternal()) {
+//                        for (Player mem : new ArrayList<>(getParty().getMembers(p))) {
+//                            mem.sendMessage(getMsg(mem, Messages.ARENA_LEAVE_PARTY_DISBANDED));
+//                        }
+//                    }
+//                    getParty().disband(p);
+//                }
+//            }
+//        }
 
         p.setFlying(false);
         p.setAllowFlight(false);
